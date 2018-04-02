@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MySite</title>
+    <link rel="stylesheet" href="{% static 'css/flexboxgrid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header id="main-header">
+      <div class="container">
+        <div class="row end-sm end-md end-lg center-xs middle-xs middle-sm middle-md middle-lg">
+          <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+            <h1><a href="{% url 'home' %}"><span class="primary-text">My</span>Site</a></h1>
+          </div>
+          <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+            <nav id="navbar">
+              <ul>
+                <li class="current"><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Tutorial</a></li>
+                <li><a href="https://github.com/ahsanhabib98">Codes</a></li>
+                <li><a href="{% url 'email' %}">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- COMPANY -->
+    <section id="company">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <h4>Contact Me</h4>
+            <ul>
+              <li><i class="fa fa-phone"></i> (+880) 18574-59149</li>
+              <li><i class="fa fa-envelope"></i> ahredoan@gmail.com</li>
+              <li><i class="fa fa-map"></i> 12/2 West Jatrabari, Dhaka 1204.</li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <h4>About Me</h4>
+            <p>I am Ahsan Habib. I am a student of <a href="http://www.easternuni.edu.bd/"> Eastern University </a>and my department is CSE.</p>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <h4>Subscription</h4>
+            <p>Please Subscribe MySite.</p>
+            <form>
+              <input type="text" name="email" placeholder="Enter Email">
+              <button type="submit" name="button">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="main-footer">
+      <div class="container">
+        <div class="row center-xs center-sm center-md center-lg">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <p>Copyright &copy; 2018 | MySite</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

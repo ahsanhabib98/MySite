@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <!-- SHOWCASE -->
+    <section id="showcase">
+      <div class="container">
+        <div class="row center-xs center-sm center-md center-lg middle-xs middle-sm middle-md middle-lg">
+          <div class="col-xs-10 col-sm-10 col-md-10 col-lg-7 showcase-content">
+            <h1>Welcome to <span class="primary-text">MySite</span></h1>
+            <p>A successfull software engineer and developer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+      <div class="container">
+        <div class="row center-xs center-sm center-md center-lg">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2>Core Features</h2>
+            <p>What's Included</p>
+            <!-- ICON ROW 1 -->
+            <div class="row center-xs center-sm center-md center-lg">
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <i class="fa fa-dashboard"></i><br>
+                <h4>Fully Optimized</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <i class="fa fa-question-circle-o"></i><br>
+                <h4>Free Support</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <i class="fa fa-rocket"></i><br>
+                <h4>Free upgrades</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+              </div>
+            </div>
+
+            <!-- ICON ROW 2 -->
+            <div class="row center-xs center-sm center-md center-lg">
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <i class="fa fa-line-chart"></i><br>
+                <h4>UpTime Guarantee</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <i class="fa fa-users"></i><br>
+                <h4>Multi-User</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <i class="fa fa-plug"></i><br>
+                <h4>Plug & Play</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO SECTION -->
+    <section id="info">
+      <div class="container">
+        <div class="row center-xs center-sm center-md center-lg middle-xs middle-sm middle-md middle-lg">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <img src="{% static 'images/iphone.png' %}" alt="">
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h2>Core Features</h2>
+            <ul>
+              <li><i class="fa fa-check"></i> Fully Optimized</li>
+              <li><i class="fa fa-check"></i> Free Support</li>
+              <li><i class="fa fa-check"></i> Free Upgrades</li>
+              <li><i class="fa fa-check"></i> UpTime Guarantee</li>
+              <li><i class="fa fa-check"></i> Mulitple Users</li>
+              <li><i class="fa fa-check"></i> Plug & Play</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- SUBHEADER -->
+    <section id="subheader">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h1>Contact</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN PAGE -->
+    <section id="page" class="contact">
+      <div class="container">
+        <div class="row center-xs center-sm center-md center-lg">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2><span class="primary-text">Get</span> In Touch</h2>
+            <p>If you want post your any positive written or suggestions in MySite. Please use this form to contact me.</p>
+            <form method="POST">
+            	{% csrf_token %}
+              <div>
+                <label for="name">From email</label><br>
+                {{form.from_email}}
+              </div>
+              <div>
+                <label for="email">Subject</label><br>
+                {{form.subject}}
+              </div>
+              <div>
+                <label for="message">Message</label><br>
+                {{form.message}}
+              </div>
+              <div class="form-actions">
+      			<button type="submit">Send</button>
+    		  </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+{% endblock %}
