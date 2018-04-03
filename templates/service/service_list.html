@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %} 
+        <section id="subheader">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>About My Service</h1>
+              </div>
+            </div>
+          </div>
+         </section>   
+         <sectio class="search-result">
+                    <div class="container">
+                        <div class="row">
+                            {% for service in all_service %}
+                            <div class="col-sm-3">
+                                <div class="search-result-service">
+                                    <a href="{% url 'service_detail' service.id %}"><h3>{{service.title}}</h3></a>
+                                    <img src="{% if service.photo %}
+                                    {{ service.photo.url }}
+                                {% endif %}" alt="" height="200px" width="200px">
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </sectio>
+   {% endblock %}

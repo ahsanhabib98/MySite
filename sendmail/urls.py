@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from . import views
+from .views import*
 urlpatterns = [
-    url(r'^email/', views.emailview, name='email'),
-    url(r'^success/', views.successview, name='success'),
+    url(r'^email/', emailview, name='email'),
+    url(r'^success/', successview, name='success'),
 ]

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %} 
+  <section id="subheader">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>About My Service</h1>
+              </div>
+            </div>
+          </div>
+         </section>   
+  <div class="container">
+    <h3>{{service.title}}</h3>
+    <img src="{% if service.photo %}
+                            {{ service.photo.url }}
+                        {% endif %}" alt="" height="500x" width="500px" class="img-fluid"/>
+    <h4>{{service.description}}</h4>
+    <p>{{service.created_date}}</p>
+  </div>
+{% endblock %}
