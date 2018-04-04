@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<section id="subheader">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>All post</h1>
+              </div>
+            </div>
+          </div>
+         </section>   
+         <sectio class="search-result">
+                    <div class="container">
+                        <div class="row">
+                            {% for blog in all_blog %}
+                            <div class="col-sm-3">
+                                <div class="search-result-service">
+                                    <a href="{% url 'blog_detail' blog.id %}"><h3>{{blog.title}}</h3></a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+         </sectio>
+
+
+{% endblock %}

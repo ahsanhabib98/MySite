@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^about/', about, name = 'about'),
     url(r'^sendmail/', include('sendmail.urls')),
     url(r'^service/', include('service.urls')),
+    url(r'^blog/', include('blog.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
