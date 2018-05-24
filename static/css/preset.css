@@ -1,0 +1,103 @@
+/*
+  Theme Name: 
+  Theme URL: 
+  Author: 
+  Author URI: 
+  Description: 
+  Version: 1.0.0
+*/
+
+/*==============================================================================
+[Table of contents]
+================================================================================
+[1] - Fonts
+[2] - Typography 
+[3] - Basic Style 
+[4] - Bootstrap fix for win-phone 8 and ie10 
+
+==============================================================================*/
+
+
+/*==============================================================================
+// Fonts //
+==============================================================================*/
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,900,700,700italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic);
+
+/*==============================================================================
+// Typography //
+==============================================================================*/
+body, html{
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color: #858585;
+    line-height: 30px;
+}
+h1, h2, h3, h4, h5, h6{
+    line-height: .8;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    color: #000;
+}
+
+
+/*==============================================================================
+// Basic Style //
+==============================================================================*/
+a{
+    color: #8e44ad;
+    transition: all ease 500ms;
+    -moz-transition: all ease 500ms;
+    -webkit-transition: all ease 500ms;
+    -ms-transition: all ease 500ms;
+    -o-transition: all ease 500ms;
+}
+a:hover{
+    text-decoration: none;
+    color: #222;
+}
+a:focus, input:focus{
+    outline: 0;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+ul,
+ol{
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+*::-moz-selection {
+    background: #3399FF;
+    text-shadow: none;
+    color: #fff;
+}
+::selection {
+    background: #3399FF;
+    text-shadow: none;
+    color: #fff;
+}
+.noPadding{
+    padding: 0px !important;
+}
+.noPaddingBottom{
+    padding-bottom: 0px !important;
+}
+.noPaddingLeft{
+    padding-left: 0px !important;
+}
+.noPaddingRight{
+    padding-right: 0px !important;
+}
+.noMarginBottom{
+    margin-bottom: 0px !important;
+}
+
+
+
+

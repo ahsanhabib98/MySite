@@ -1,0 +1,201 @@
+
+@media(min-width:991px) and (max-width:1200px){
+    .blogImg img{
+        width: 100%;
+    }
+}
+@media(max-width:990px){
+    .leftMenu{
+        width: 290px;
+    }
+    .leftmenuScroll{
+        height: 200px;
+    }
+    .mainNav .menuBar {
+        position: absolute;
+        top: -5px;
+    }
+    .mainNav {
+        text-align: center;
+    }
+    .mainNav ul {
+        background: #ededed;
+        top: 70px;
+        display: none;
+        height: 250px;
+        left: 0;
+        overflow: scroll;
+        position: absolute;
+        right: 0;
+        top: 70px;
+        width: 96%;
+        z-index: 1;
+        margin: auto;
+        padding: 15px 0;
+    }
+    .mainNav ul li ul.sub-menu{
+        height: inherit;
+    }
+    .mainNav ul li{
+        display: block;
+        margin-top: 10px;
+    }
+    .mainNav ul li a{
+        padding-bottom: 10px;
+    }
+    .mainNav ul li:last-child{
+        margin-left: 0;
+    }
+    .mega-menu {
+        opacity: 1;
+        position: relative;
+        right: 0;
+        top: 0;
+        transition: none;
+        visibility: visible;
+        width: 100%;
+        z-index: 1;
+        box-shadow: none;
+    }
+    .megaitem {
+        background: #fff none repeat scroll 0 0;
+        display: none;
+        margin-top: 15px;
+        padding-top: 0;
+    }
+    .mega-menu {
+        overflow: hidden;
+        padding-top: 15px;
+    }
+    .mainNav ul li:hover .mega-menu{
+        top: 0;
+    }
+    .mainNav ul li ul.sub-menu {
+        background: #fff none repeat scroll 0 0;
+        box-shadow: none;
+        left: auto;
+        margin-left: 0;
+        opacity: 1;
+        position: relative;
+        right: auto;
+        top: 0;
+        transition: none 0s ease 0s ;
+        visibility: visible;
+        width: 100%;
+        z-index: 1;
+    }
+    .mainNav ul li:hover ul.sub-menu{
+        top: 0;
+    }
+    .mainNav ul li ul.sub-menu li:last-child{
+        margin-right: 0;
+    }
+
+}
+
+@media(min-width:768px) and (max-width:990px){
+    .banner > img ,
+    .aboutMe > img{
+        width: 100%;
+    }
+    .singleInst {
+        width: 25%;
+    }
+    .mainNav ul{
+        display: none;
+    }
+    .blogImg img{
+        width: 100%;
+        height: auto;
+    }
+    .blogHlafWidth {
+        margin-bottom: 60px;
+        overflow: hidden;
+    }
+    .leftmenuScroll {
+        height: 350px;
+    }
+    .authorFullWidth{
+        padding-left: 0;
+        margin-bottom: 30px;
+    }
+    .authorFullWidth img{
+        position: relative;
+        margin-bottom: 20px;
+    }
+    .comHead {
+        margin-bottom: 10px;
+    }
+    .contactForm{
+        margin-bottom: 50px;
+    }
+    .mainNav ul {
+        left: 15px;
+        width: 128%;
+    }
+}
+
+@media(min-width:991px) and (max-width:1200px){
+    .mainNav ul li{
+        margin: 25px 14px 0;
+    }
+}
+@media(min-width:320px) and (max-width:767px){
+    .headerTop {
+        padding: 25px 0;
+    }
+    .logo {
+        width: 200px;
+    }
+    .search{
+        margin-right: 0;
+    }
+    .silderCont h1 {
+        font-size: 18px;
+    }
+    .metaCont a {
+        font-size: 10px;
+        margin-left: 5px;
+    }
+    .blogMeta a {
+        margin-right: 5px;
+    }
+    .blogImg > img {
+        height: auto;
+        width: 100%;
+    }
+    .aboutMe img {
+        width: 100%;
+    }
+    .banner > img {
+        width: 100%;
+    }
+    .singleInst {
+        width: 50%;
+    }
+    .menuOpened #page{
+        margin-left: 305px;
+    }
+    .authorFullWidth{
+        padding-left: 0;
+    }
+    .authorFullWidth img{
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    .quotePost {
+        padding: 51px 15px;
+    }
+    .blogHlafWidth {
+        margin-bottom: 60px;
+    }
+}
+@media(min-width:320px) and (max-width:640px){
+    body.menuOpened{
+        margin-left: 0;
+    }
+    .megaImg img{
+        width: 100%;
+    }
+}

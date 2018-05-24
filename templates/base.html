@@ -1,81 +1,321 @@
 {% load static %}
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>MySite</title>
-    <link rel="stylesheet" href="{% static 'css/flexboxgrid.css' %}">
-    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  </head>
-  <body>
-    <!-- HEADER -->
-    <header id="main-header">
-      <div class="container">
-        <div class="row end-sm end-md end-lg center-xs middle-xs middle-sm middle-md middle-lg">
-          <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <h1><a href="{% url 'home' %}"><span class="primary-text">My</span>Site</a></h1>
-          </div>
-          <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-            <nav id="navbar">
-              <ul>
-                <li class="current"><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'service_list' %}">Services</a></li>
-                <li><a href="{% url 'blog_list' %}">Blog</a></li>
-                <li><a href="#">Tutorial</a></li>
-                <li><a href="https://github.com/ahsanhabib98">Codes</a></li>
-                <li><a href="{% url 'email' %}">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Dhaka HTML Responsive Blog Template</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Include All CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/preset.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.mCustomScrollbar.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}"/>
+        <!-- End Include All CSS -->
+
+
+        <!-- Favicon Icon -->
+        <link rel="icon"  type="image/png" href="{% static 'images/favicona.png' %}">
+        <!-- Favicon Icon -->
+
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+            <script src="js/respond.min.js"></script>
+        <![endif]--> 
+    </head>
+    <body class="animat">
+        <div id="page">
+            <div class="leftMenu">
+                <div class="leftmenuHead">
+                    <div class="logoleft pull-left">
+                        <a href="#"><img src="{% static 'images/logoleft.png' %}" alt=""></a>
+                    </div>
+                    <a href="#" class="leftclose pull-right">x</a>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="leftmenuScroll">
+                    <nav class="leftmainnav">
+                        <ul>
+                            <li><a href="{% url 'home' %}">home pages</a></li>
+                            <li class="has-menu-items"><a href="#">categories</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog_category.html">Category</a></li>
+                                    <li><a href="archive.html">Archive</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-menu-items"><a href="#">post styles</a>
+                                <ul class="sub-menu">
+                                    <li><a href="post_sidebar.html">Post Layout</a></li>
+                                    <li><a href="post_fullwidth.html">Full Width</a></li>
+                                    <li><a href="post_quate_sidebary.html">Quote Layout</a></li>
+                                    <li><a href="post_audio_sidebar.html">Audio Layout</a></li>
+                                    <li><a href="post_video_sidebar.html">Video Layout</a></li>
+                                    <li><a href="gellarypost.html">Gallery Post</a></li>
+                                    <li><a href="gellarypost_fullwidth.html">Gallery Full</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-menu-items"><a href="#">blog layouts</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog_list.html">Blog List</a></li>
+                                    <li><a href="blog_list_fullwiddth.html">List Full</a></li>
+                                    <li><a href="blog_grid.html">Blog Grid</a></li>
+                                    <li><a href="blog_grid_fullwiddth.html">Grid Full</a></li>
+                                    <li><a href="blog_fullwidth.html">FullWidth</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-menu-items"><a href="{% url 'email' %}">contact</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{% url 'email' %}">Contact Me</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="socialleft">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+              <!--Header Top Start -->
+            <section class="headerTop">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-xs-2">
+                            <div class="menuBar" id="leftTrigger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-xs-8 text-center">
+                            <div class="logo">
+                                <a href="index.html"><img src="{% static 'images/logo.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-xs-2 text-right">
+                            <div class="search">
+                                <a href="#">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                                <form action="#" method="post" class="searchForm">
+                                    <input type="search" placeholder="Search...">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Header Top End -->
+            <!--Header Start-->
+            <header class="header">
+                <div class="container">
+                    <div class="headerIn">
+                        <div class="row">
+                            <div class="col-lg-8 col-sm-9 col-xs-12 pull-left noPaddingRight">
+                                <nav class="mainNav">
+                                    <div class="menuBar hidden-lg hidden-md">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <ul>
+                                        <li class="has-menu-items"><a href="{% url 'home' %}">home</a></li>
+                                        <li class="has-menu-items"><a href="#">Mega menu</a>
+                                            <div class="row megaitem">
+                                                <div class="mega-menu">
+                                                    <div class="col-lg-3 col-sm-6">
+                                                        <div class="megaImg">
+                                                            <a href="#"><img src="{% static 'images/blog/1.jpg' %}" alt=""></a>
+                                                        </div>
+                                                        <h2 class="megaTitle">
+                                                            <a href="#">Drops of rain could heard hitting the pane which made</a>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="col-lg-3 col-sm-6">
+                                                        <div class="megaImg">
+                                                            <a href="#"><img src="{% static 'images/blog/2.jpg' %}" alt=""></a>
+                                                        </div>
+                                                        <h2 class="megaTitle">
+                                                            <a href="#">And it's a funny sort of business up there at your desk</a>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="col-lg-3 col-sm-6">
+                                                        <div class="megaImg">
+                                                            <a href="#"><img src="{% static 'images/blog/3.jpg' %}" alt=""></a>
+                                                        </div>
+                                                        <h2 class="megaTitle">
+                                                            <a href="#">It was half past six and the hands were quietly moving forwards</a>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="col-lg-3 col-sm-6">
+                                                        <div class="megaImg">
+                                                            <a href="#"><img src="{% static 'images/blog/1.jpg' %}" alt=""></a>
+                                                        </div>
+                                                        <h2 class="megaTitle">
+                                                            <a href="#">Drops of rain could heard hitting the pane which made</a>
+                                                        </h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="has-menu-items"><a href="javascript:void('0')">categories</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="blog_category.html">Category</a></li>
+                                                <li><a href="archive.html">Archive</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-menu-items"><a href="javascript:void('0')">post styles</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="post_sidebar.html">Post Layout</a></li>
+                                                <li><a href="post_fullwidth.html">Full Width</a></li>
+                                                <li><a href="post_quate_sidebary.html">Quote Layout</a></li>
+                                                <li><a href="post_audio_sidebar.html">Audio Layout</a></li>
+                                                <li><a href="post_video_sidebar.html">Video Layout</a></li>
+                                                <li><a href="gellarypost.html">Gallery Post</a></li>
+                                                <li><a href="gellarypost_fullwidth.html">Gallery Full</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-menu-items"><a href="javascript:void('0')">blog layouts</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="blog_list.html">Blog List</a></li>
+                                                <li><a href="blog_list_fullwiddth.html">List Full</a></li>
+                                                <li><a href="blog_grid.html">Blog Grid</a></li>
+                                                <li><a href="blog_grid_fullwiddth.html">Grid Full</a></li>
+                                                <li><a href="blog_fullwidth.html">FullWidth</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-menu-items"><a href="javascript:void('0')">pages</a>
+                                            <ul class="sub-menu">                                               
+                                                <li><a href="archive.html">Archive</a></li>
+                                                <li><a href="{% url 'about' %}">About Me</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-menu-items"><a href="{% url 'email' %}">contact</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="{% url 'email' %}">Contact me</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-lg-4 col-sm-3 col-xs-8 pull-right text-right">
+                                <div class="socialHeader">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--Header End-->
+           {% block content %}
+
+           {% endblock %}
+            <section class="paginations">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="paginationIn">
+                                <span class="current">1</span>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <span class="dottedPagi">...</span>
+                                <a href="#">12</a>
+                                <a href="#" class="next"><i class="fa fa-long-arrow-right"></i></a>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="instagramPhoto">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="singleInst">
+                            <a href="#">
+                                <img src="{% static 'images/instagram/1.jpg' %}" alt="">
+                            </a>
+                        </div>
+                        <div class="singleInst">
+                            <a href="#">
+                                <img src="{% static 'images/instagram/2.jpg' %}" alt="">
+                            </a>
+                        </div>
+                        <div class="singleInst">
+                            <a href="#">
+                                <img src="{% static 'images/instagram/3.jpg' %}" alt="">
+                            </a>
+                        </div>
+                        <div class="singleInst">
+                            <a href="#">
+                                <img src="{% static 'images/instagram/4.jpg' %}" alt="">
+                            </a>
+                        </div>
+                        <div class="singleInst">
+                            <a href="#">
+                                <img src="{% static 'images/instagram/5.jpg' %}" alt="">
+                            </a>
+                        </div>
+                        <div class="singleInst">
+                            <a href="#">
+                                <img src="{% static 'images/instagram/6.jpg' %}" alt="">
+                            </a>
+                        </div>
+                        <div class="singleInst">
+                            <a href="#">
+                                <img src="{% static 'images/instagram/7.jpg' %}" alt="">
+                            </a>
+                        </div>
+                        <div class="singleInst">
+                            <a href="#">
+                                <img src="{% static 'images/instagram/8.jpg' %}" alt="">
+                            </a>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </section>
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3 text-center">
+                            <div class="footLogo">
+                                <a href="#">
+                                    <img src="images/logo2.png" alt="">
+                                </a>
+                            </div>
+                            <p class="copyrightText">Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam et purus at lectus tempus <span>Copyright © 2016 Dhaka. All Right Reserved</span></p>
+                            <div class="footSocial">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
-      </div>
-    </header>
 
-    {% block content %}
-
-    {% endblock %}
-
-    <!-- COMPANY -->
-    <section id="company">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <h4>Contact Me</h4>
-            <ul>
-              <li><i class="fa fa-phone"></i> (+880) 18574-59149</li>
-              <li><i class="fa fa-envelope"></i> ahredoan@gmail.com</li>
-              <li><i class="fa fa-map"></i> 12/2 West Jatrabari, Dhaka 1204.</li>
-            </ul>
-          </div>
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <h4>About Me</h4>
-            <p>I am Ahsan Habib. I am a student of <a href="http://www.easternuni.edu.bd/"> Eastern University </a>and my department is CSE.</p>
-          </div>
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <h4>Subscription</h4>
-            <p>Please Subscribe MySite.</p>
-            <form>
-              <input type="text" name="email" placeholder="Enter Email">
-              <button type="submit" name="button">Subscribe</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer id="main-footer">
-      <div class="container">
-        <div class="row center-xs center-sm center-md center-lg">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <p>Copyright &copy; 2018 | MySite</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-  </body>
+        <!-- Include All JS -->
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/owl.carousel.js' %}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script type="text/javascript" src="{% static 'js/gmaps.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.mCustomScrollbar.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/theme.js' %}"></script>
+    </body>
 </html>

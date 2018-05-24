@@ -1,20 +1,22 @@
-from django.shortcuts import render
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from .forms import ContactForm
+from .forms import EmailForm
+from django.conf import settings
 
 def emailview(request):
-    form = ContactForm(request.POST or None)
+    form = EmailForm(request.POST or None)
     context = {
     	'form':form,
     }
     if request.method == 'POST':
-        form = ContactForm(request.POST)
+        form = EmailForm(request.POST)
         if form.is_valid():
             subject = form.cleaned_data['subject']
+            # name = form.cleaned_data['name']
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
+            # from_email = settings.EMAIL_HOST_USER
             try:
                 send_mail(subject, message, from_email, ['ahredoan@gmail.com'])
             except BadHeaderError:
