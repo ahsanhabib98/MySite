@@ -22,5 +22,10 @@ def blog_detail(request, id):
 	template = "blog/blog_detail.html"
 	return render(request, template, context)
 
-	
-
+def categorywise_blog(request, id):
+	all_blog = PostModel.objects.filter(category__id = id)
+	context = {
+		'all_blog': all_blog,
+	}
+	template = "blog/categorywise_blog.html"
+	return render(request, template, context)

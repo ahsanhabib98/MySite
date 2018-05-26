@@ -1,21 +1,312 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block content %} 
-  <section id="subheader">
-          <div class="container">
+{% block content %}
+
+<!--Header Start-->
+<header class="header">
+    <div class="container">
+        <div class="headerIn">
             <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <h1>About My Service</h1>
-              </div>
+                <div class="col-lg-8 col-sm-9 col-xs-12 pull-left noPaddingRight">
+                    <nav class="mainNav">
+                        <div class="menuBar hidden-lg hidden-md">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <ul>
+                            <li class="has-menu-items"><a href="{% url 'home' %}">home</a></li>
+                            <li class="has-menu-items"><a href="#">Mega menu</a>
+                                <div class="row megaitem">
+                                    <div class="mega-menu">
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="megaImg">
+                                                <a href="#"><img src="{% static 'images/blog/1.jpg' %}" alt=""></a>
+                                            </div>
+                                            <h2 class="megaTitle">
+                                                <a href="#">Drops of rain could heard hitting the pane which made</a>
+                                            </h2>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="megaImg">
+                                                <a href="#"><img src="{% static 'images/blog/2.jpg' %}" alt=""></a>
+                                            </div>
+                                            <h2 class="megaTitle">
+                                                <a href="#">And it's a funny sort of business up there at your desk</a>
+                                            </h2>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="megaImg">
+                                                <a href="#"><img src="{% static 'images/blog/3.jpg' %}" alt=""></a>
+                                            </div>
+                                            <h2 class="megaTitle">
+                                                <a href="#">It was half past six and the hands were quietly moving forwards</a>
+                                            </h2>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="megaImg">
+                                                <a href="#"><img src="{% static 'images/blog/1.jpg' %}" alt=""></a>
+                                            </div>
+                                            <h2 class="megaTitle">
+                                                <a href="#">Drops of rain could heard hitting the pane which made</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="has-menu-items"><a href="javascript:void('0')">categories</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog_category.html">Category</a></li>
+                                    <li><a href="archive.html">Archive</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-menu-items"><a href="javascript:void('0')">post styles</a>
+                                <ul class="sub-menu">
+                                    <li><a href="post_sidebar.html">Post Layout</a></li>
+                                    <li><a href="post_fullwidth.html">Full Width</a></li>
+                                    <li><a href="post_quate_sidebary.html">Quote Layout</a></li>
+                                    <li><a href="post_audio_sidebar.html">Audio Layout</a></li>
+                                    <li><a href="post_video_sidebar.html">Video Layout</a></li>
+                                    <li><a href="gellarypost.html">Gallery Post</a></li>
+                                    <li><a href="gellarypost_fullwidth.html">Gallery Full</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-menu-items"><a href="javascript:void('0')">Blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{% url 'blog_list' %}">Blog List</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-menu-items"><a href="javascript:void('0')">pages</a>
+                                <ul class="sub-menu">
+                                    <li><a href="archive.html">Archive</a></li>
+                                    <li><a href="{% url 'about' %}">About Me</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-menu-items"><a href="{% url 'email' %}">contact</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{% url 'email' %}">Contact me</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-4 col-sm-3 col-xs-8 pull-right text-right">
+                    <div class="socialHeader">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
             </div>
-          </div>
-         </section>   
-  <div class="container">
-    <h3>{{blog.title}}</h3>
-    <img src="{% if blog.photo %}
-                            {{ blog.photo.url }}
-                        {% endif %}" alt="" height="500x" width="500px" class="img-fluid"/>
-    <h4>{{blog.content}}</h4>
-    <p>{{blog.publish_date}}</p>
-  </div>
+        </div>
+    </div>
+</header>
+<!--Header End-->
+  <section class="mainContent">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-sm-7">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="slider noMarginBottom">
+                                        <img src="{{ blog.photo.url }}" alt="">
+                                    </div>
+                                    <div class="gellarypostCont">
+                                        <h2 class="blogtitle gellary">
+                                            <a href="#">{{blog.title}}</a>
+                                        </h2>
+                                        <p> {{blog.content}} </p>
+
+                                    </div>
+                                    <div class="blogMeta gfullwidth">
+                                        <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
+                                        <a href="#"> <i class="fa fa-clock-o"></i>{{blog.publish_date}}</a>
+                                        <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h3 class="widgetTitle text-capitalize">Post Comments</h3>
+                                    <ol class="commentList">
+                                        <li>
+                                            <div class="singleComments">
+                                                <img src="images/author/1.jpg" alt="">
+                                                <div class="comHead">
+                                                    <a class="pull-left authorName" href="#">Jackson Richardson</a>
+                                                    <a class="pull-right reply" href="#">reply</a>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <h4 class="metaDate">Jan 06, 2016 at 14:35</h4>
+                                                <p>Nulla consequat elit aliquam mauris molestie fermentum. Nam at tempor massa, mattis vulputate felis. Maecenas est arcu, viverra vitae elit vel, pretium malesuada lectus. Proin ut vulputate ex. </p>
+                                            </div>
+                                            <ul class="childCom">
+                                                <li>
+                                                    <div class="singleComments">
+                                                        <img src="images/author/2.jpg" alt="">
+                                                        <div class="comHead">
+                                                            <a class="pull-left authorName" href="#">Alberto Brando</a>
+                                                            <a class="pull-right reply" href="#">reply</a>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <h4 class="metaDate">Jan 06, 2016 at 14:35</h4>
+                                                        <p>Nulla consequat elit aliquam mauris molestie fermentum. Nam at tempor massa, mattis vulputate felis. Maecenas est arcu, viverra vitae elit vel, pretium malesuada lectus. Proin ut vulputate ex. </p>
+                                                    </div>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="singleComments">
+                                                <img src="images/author/3.jpg" alt="">
+                                                <div class="comHead">
+                                                    <a class="pull-left authorName" href="#">Jessica Richardson</a>
+                                                    <a class="pull-right reply" href="#">reply</a>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <h4 class="metaDate">Jan 06, 2016 at 14:35</h4>
+                                                <p>Nulla consequat elit aliquam mauris molestie fermentum. Nam at tempor massa, mattis vulputate felis. Maecenas est arcu, viverra vitae elit vel, pretium malesuada lectus. Proin ut vulputate ex. </p>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h3 class="widgetTitle text-capitalize">Leave a Reply</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <form action="#" method="post" class="contactForm">
+                                    <div class="col-lg-6">
+                                        <input type="text" placeholder="Name">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="email" placeholder="Email">
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <input type="text" placeholder="Subject">
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <textarea placeholder="Message"></textarea>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <button type="submit" class="commentSubmit">submit comment</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-5">
+                            <div class="sidebarBlog">
+                                <aside class="widget">
+                                    <h3 class="widgetTitle">ABOUT ME</h3>
+                                    <div class="aboutMe">
+                                        <img src="images/aboutme.jpg" alt="">
+                                        <div class="aboutdec">
+                                            <h4>Hernandez Higuan</h4>
+                                            <p>Doing business like this takes much more effort than doing your own business at home, and on top of that there's the curse of travelling, worries about making train connections, bad and irregular food.</p>
+                                        </div>
+                                    </div>
+                                </aside>
+                                <aside class="widget">
+                                    <div class="followMe">
+                                        <h2 class="widgetTitle">follow me</h2>
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                                    </div>
+                                </aside>
+                                <aside class="widget">
+                                    <div class="banner">
+                                        <img src="images/b1.jpg" alt="">
+                                        <div class="bannerCont">
+                                            <h2>dhaka</h2>
+                                            <p>WORDPRESS THEME FOR BLOGGERS</p>
+                                        </div>
+                                    </div>
+                                </aside>
+                                <aside class="widget">
+                                    <h3 class="widgetTitle">RECENT POSTS</h3>
+                                    <div class="recentPost">
+                                        <div class="singleRecpost">
+                                            <img src="images/recentpost/1.jpg" alt="">
+                                            <h2 class="recTitle">
+                                                <a href="#">Drops of rain could heard hitting the pane which made</a>
+                                            </h2>
+                                        </div>
+                                        <div class="singleRecpost">
+                                            <img src="images/recentpost/2.jpg" alt="">
+                                            <h2 class="recTitle">
+                                                <a href="#">And it's a funny sort of business to be sitting up there at your desk</a>
+                                            </h2>
+                                        </div>
+                                        <div class="singleRecpost">
+                                            <img src="images/recentpost/3.jpg" alt="">
+                                            <h2 class="recTitle">
+                                                <a href="#">It was half past six and the hands were quietly moving forwards</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </aside>
+                                <aside class="widget emailSub">
+                                    <h3 class="widgetTitle">subcribe</h3>
+                                    <p>Etiam mollis leo ac diam facilisis, in pretium felis molestie. Quisque non nisi ut lectus</p>
+                                    <form action="#" method="post" class="subForm" id="subscriptionsforms">
+                                        <input type="email" placeholder="Your email address" id="sub_email">
+                                        <button type="submit" id="subs_submit">sign up</button>
+                                    </form>
+                                </aside>
+                                <aside class="widget emailSub">
+                                    <h3 class="widgetTitle">CATEGORIES</h3>
+                                    <ul>
+                                        <li><a href="#">Beauty</a></li>
+                                        <li><a href="#">Business</a></li>
+                                        <li><a href="#">Celebrity</a></li>
+                                        <li><a href="#">Creativity</a></li>
+                                        <li><a href="#">Fashion</a></li>
+                                        <li><a href="#">General</a></li>
+                                        <li><a href="#">Magazine</a></li>
+                                        <li><a href="#">Travel</a></li>
+                                    </ul>
+                                </aside>
+                                <aside class="widget">
+                                    <div class="flickr">
+                                        <h2 class="widgetTitle">flickr photo</h2>
+                                        <a href="#"><img src="images/recentpost/1.jpg" alt=""></a>
+                                        <a href="#"><img src="images/recentpost/3.jpg" alt=""></a>
+                                        <a href="#"><img src="images/recentpost/2.jpg" alt=""></a>
+                                        <a href="#"><img src="images/recentpost/3.jpg" alt=""></a>
+                                        <a href="#"><img src="images/recentpost/2.jpg" alt=""></a>
+                                        <a href="#"><img src="images/recentpost/1.jpg" alt=""></a>
+                                        <a href="#"><img src="images/recentpost/1.jpg" alt=""></a>
+                                        <a href="#"><img src="images/recentpost/2.jpg" alt=""></a>
+                                        <a href="#"><img src="images/recentpost/3.jpg" alt=""></a>
+
+                                    </div>
+                                </aside>
+                                <aside class="widget">
+                                    <h2 class="widgetTitle">Tag</h2>
+                                    <div class="tagcloud">
+                                        <a href="#">blog</a>
+                                        <a href="#">personal</a>
+                                        <a href="#">wordpress</a>
+                                        <a href="#">travel</a>
+                                        <a href="#">fashion</a>
+                                        <a href="#">Html</a>
+                                        <a href="#">dhaka html</a>
+                                        <a href="#">envato</a>
+                                        <a href="#">bloging</a>
+                                        <a href="#">Html</a>
+                                        <a href="#">dhaka html</a>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 {% endblock %}

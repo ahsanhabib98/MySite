@@ -1,7 +1,87 @@
- {% extends 'base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
+
+<!--Header Start-->
+<header class="header">
+    <div class="container">
+        <div class="headerIn">
+            <div class="row">
+                <div class="col-lg-8 col-sm-9 col-xs-12 pull-left noPaddingRight">
+                    <nav class="mainNav">
+                        <div class="menuBar hidden-lg hidden-md">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <ul>
+                            <li class="has-menu-items"><a href="{% url 'home' %}">home</a></li>
+                            <li class="has-menu-items"><a href="#">Mega menu</a>
+                                <div class="row megaitem">
+                                    <div class="mega-menu">
+                                        <div class="col-lg-3 col-sm-6">
+                                          {% for post in post %}
+                                            <div class="megaImg">
+                                                <a href="#"><img src="{{post.photo.url}}" alt=""></a>
+                                            </div>
+                                            <h2 class="megaTitle">
+                                                <a href="{% url 'blog_detail' post.id %}">{{post.title}}</a>
+                                            </h2>
+                                          {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="has-menu-items"><a href="javascript:void('0')">categories</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog_category.html">Category</a></li>
+                                    <li><a href="archive.html">Archive</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-menu-items"><a href="javascript:void('0')">post styles</a>
+                                <ul class="sub-menu">
+                                    <li><a href="post_sidebar.html">Post Layout</a></li>
+                                    <li><a href="post_fullwidth.html">Full Width</a></li>
+                                    <li><a href="post_quate_sidebary.html">Quote Layout</a></li>
+                                    <li><a href="post_audio_sidebar.html">Audio Layout</a></li>
+                                    <li><a href="post_video_sidebar.html">Video Layout</a></li>
+                                    <li><a href="gellarypost.html">Gallery Post</a></li>
+                                    <li><a href="gellarypost_fullwidth.html">Gallery Full</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-menu-items"><a href="javascript:void('0')">Blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{% url 'blog_list' %}">Blog List</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-menu-items"><a href="javascript:void('0')">pages</a>
+                                <ul class="sub-menu">
+                                    <li><a href="archive.html">Archive</a></li>
+                                    <li><a href="{% url 'about' %}">About Me</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-menu-items"><a href="{% url 'email' %}">contact</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{% url 'email' %}">Contact me</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-4 col-sm-3 col-xs-8 pull-right text-right">
+                    <div class="socialHeader">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--Header End-->
 
  <section class="mainContent">
                 <div class="container">
@@ -11,11 +91,11 @@
                                 <div class="col-lg-12 text-center">
                                     <div class="slider">
                                         <div class="singleSlide">
-                                            <img src="{% static 'images/slider/a.jpg' %}" alt="">
+                                            <img src="{% static 'images/slider/1.jpg' %}" alt="">
                                             <div class="silderCont">
                                                 <h1>Pellentesqu Velit Porta Semper</h1>
                                                 <div class="metaCont">
-                                                    <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>                         
+                                                    <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
                                                     <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
                                                     <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                                 </div>
@@ -26,7 +106,7 @@
                                             <div class="silderCont">
                                                 <h1>Pellentesqu Velit Porta Semper</h1>
                                                 <div class="metaCont">
-                                                    <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>                         
+                                                    <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
                                                     <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
                                                     <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                                 </div>
@@ -37,7 +117,7 @@
                                             <div class="silderCont">
                                                 <h1>Pellentesqu Velit Porta Semper</h1>
                                                 <div class="metaCont">
-                                                    <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>                         
+                                                    <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
                                                     <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
                                                     <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                                 </div>
@@ -48,22 +128,24 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-6 col-sm-12">
+                                  {% for post in post %}
                                     <div class="singleBlog">
                                         <div class="blogImg">
-                                            <img src="{% static 'images/blog/1.jpg' %}" alt="">
+                                            <img src="{{post.photo.url}}" height="" alt="">
                                         </div>
                                         <div class="blogDec">
                                             <h2 class="blogtitle">
-                                                <a href="#">Drops of rain could be heard hitting the pane which made</a>
+                                                <a href="{% url 'blog_detail' post.id %}">{{post.title}}</a>
                                             </h2>
-                                            <p>If I didn't have my parents to think about I'd have given in my notice a long time ago. He'd fall right off his desk! </p>
+                                            <p>{{post.brief}}</p>
                                             <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>                         
+                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
                                                 <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
                                                 <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                             </div>
                                         </div>
                                     </div>
+                                  {% endfor %}
                                 </div>
                                 <div class="col-lg-6 col-sm-12">
                                     <div class="singleBlog">
@@ -76,7 +158,7 @@
                                             </h2>
                                             <p>If I didn't have my parents to think about I'd have given in my notice a long time ago. He'd fall right off his desk! </p>
                                             <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>                         
+                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
                                                 <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
                                                 <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                             </div>
@@ -94,7 +176,7 @@
                                             </h2>
                                             <p>If I didn't have my parents to think about I'd have given in my notice a long time ago. He'd fall right off his desk! </p>
                                             <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>                         
+                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
                                                 <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
                                                 <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                             </div>
@@ -112,7 +194,7 @@
                                             </h2>
                                             <p>If I didn't have my parents to think about I'd have given in my notice a long time ago. He'd fall right off his desk! </p>
                                             <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>                         
+                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
                                                 <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
                                                 <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                             </div>
@@ -130,7 +212,7 @@
                                             </h2>
                                             <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. </p>
                                             <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>                         
+                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
                                                 <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
                                                 <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                             </div>
@@ -155,7 +237,7 @@
                                             </h2>
                                             <p>His boss would certainly come round with the doctor from the medical insurance company, accuse his parents of having a lazy son, and accept the doctor's recommendation not to make any claim as the doctor believed .</p>
                                             <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>                         
+                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
                                                 <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
                                                 <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                             </div>
@@ -178,7 +260,7 @@
                                             </h2>
                                             <p>Doing business like this takes much more effort than doing your own business at home, and on top of that there's the curse of travelling, worries about making train connections, bad and irregular food.</p>
                                             <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>                         
+                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
                                                 <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
                                                 <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                             </div>
@@ -201,7 +283,7 @@
                                             </h2>
                                             <p>But who knows, maybe that would be the best thing for me. If I didn't have my parents to think about I'd have given in my notice a long time ago, I'd have gone up to the boss and told him just what I think, tell him everything I would.</p>
                                             <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>                         
+                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
                                                 <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
                                                 <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                             </div>
@@ -214,13 +296,15 @@
                             <div class="sidebarBlog">
                                 <aside class="widget">
                                     <h3 class="widgetTitle">ABOUT ME</h3>
-                                    <div class="aboutMe">
-                                        <img src="{% static 'images/aboutme.jpg' %}" alt="">
-                                        <div class="aboutdec">
-                                            <h4>Hernandez Higuan</h4>
-                                            <p>Doing business like this takes much more effort than doing your own business at home, and on top of that there's the curse of travelling, worries about making train connections, bad and irregular food.</p>
-                                        </div>
-                                    </div>
+                                    {% for author in author %}
+                                      <div class="aboutMe">
+                                          <img src="{{author.photo.url}}" height="100" width="300" alt="">
+                                          <div class="aboutdec">
+                                              <h4>{{author.name}}</h4>
+                                              <p>{{author.detail}}</p>
+                                          </div>
+                                      </div>
+                                    {% endfor %}
                                 </aside>
                                 <aside class="widget">
                                     <div class="followMe">
@@ -267,24 +351,29 @@
                                 <aside class="widget emailSub">
                                     <h3 class="widgetTitle">subcribe</h3>
                                     <p>Etiam mollis leo ac diam facilisis, in pretium felis molestie. Quisque non nisi ut lectus</p>
-                                    <form action="#" method="post" class="subForm" id="subscriptionsforms">
-                                        <input type="email" placeholder="Your email address" id="sub_email">
-                                        <button type="submit" id="subs_submit">sign up</button>
+                                    <form action="#" method="POST" class="subForm" id="">
+                                        {% csrf_token %}
+                                        {{form.as_p}}
+                                        <button type="submit" id="subs_submit">Subscribe</button>
                                     </form>
                                 </aside>
-                                <aside class="widget emailSub">
-                                    <h3 class="widgetTitle">CATEGORIES</h3>
-                                    <ul>
-                                        <li><a href="#">Beauty</a></li>
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Celebrity</a></li>
-                                        <li><a href="#">Creativity</a></li>
-                                        <li><a href="#">Fashion</a></li>
-                                        <li><a href="#">General</a></li>
-                                        <li><a href="#">Magazine</a></li>
-                                        <li><a href="#">Travel</a></li>
-                                    </ul>
-                                </aside>
+
+                                  <aside class="widget emailSub">
+                                      <h3 class="widgetTitle">CATEGORIES</h3>
+                                      <ul>
+                                        {% for category in category %}
+                                          <li><a href="{% url 'categorywise_blog' category.id %}">{{category.name}}</a></li>
+                                          <!-- <li><a href="#">Business</a></li>
+                                          <li><a href="#">Celebrity</a></li>
+                                          <li><a href="#">Creativity</a></li>
+                                          <li><a href="#">Fashion</a></li>
+                                          <li><a href="#">General</a></li>
+                                          <li><a href="#">Magazine</a></li>
+                                          <li><a href="#">Travel</a></li> -->
+                                        {% endfor %}
+                                      </ul>
+                                  </aside>
+
                                 <aside class="widget">
                                     <div class="flickr">
                                         <h2 class="widgetTitle">flickr photo</h2>

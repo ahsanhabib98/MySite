@@ -5,6 +5,7 @@ from .forms import EmailForm
 from django.conf import settings
 
 def emailview(request):
+    print('working')
     form = EmailForm(request.POST or None)
     context = {
     	'form':form,
