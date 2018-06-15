@@ -23,89 +23,40 @@
                                 <div class="row megaitem">
                                     <div class="mega-menu">
                                         <div class="col-lg-3 col-sm-6">
+                                          {% for post in post %}
                                             <div class="megaImg">
-                                                <a href="#"><img src="{% static 'images/blog/1.jpg' %}" alt=""></a>
+                                                <a href="#"><img src="{{post.photo.url}}" alt=""></a>
                                             </div>
                                             <h2 class="megaTitle">
-                                                <a href="#">Drops of rain could heard hitting the pane which made</a>
+                                                <a href="{% url 'blog_detail' post.id %}">{{post.title}}</a>
                                             </h2>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="megaImg">
-                                                <a href="#"><img src="{% static 'images/blog/2.jpg' %}" alt=""></a>
-                                            </div>
-                                            <h2 class="megaTitle">
-                                                <a href="#">And it's a funny sort of business up there at your desk</a>
-                                            </h2>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="megaImg">
-                                                <a href="#"><img src="{% static 'images/blog/3.jpg' %}" alt=""></a>
-                                            </div>
-                                            <h2 class="megaTitle">
-                                                <a href="#">It was half past six and the hands were quietly moving forwards</a>
-                                            </h2>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="megaImg">
-                                                <a href="#"><img src="{% static 'images/blog/1.jpg' %}" alt=""></a>
-                                            </div>
-                                            <h2 class="megaTitle">
-                                                <a href="#">Drops of rain could heard hitting the pane which made</a>
-                                            </h2>
+                                          {% endfor %}
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li class="has-menu-items"><a href="javascript:void('0')">categories</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog_category.html">Category</a></li>
-                                    <li><a href="archive.html">Archive</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-menu-items"><a href="javascript:void('0')">post styles</a>
-                                <ul class="sub-menu">
-                                    <li><a href="post_sidebar.html">Post Layout</a></li>
-                                    <li><a href="post_fullwidth.html">Full Width</a></li>
-                                    <li><a href="post_quate_sidebary.html">Quote Layout</a></li>
-                                    <li><a href="post_audio_sidebar.html">Audio Layout</a></li>
-                                    <li><a href="post_video_sidebar.html">Video Layout</a></li>
-                                    <li><a href="gellarypost.html">Gallery Post</a></li>
-                                    <li><a href="gellarypost_fullwidth.html">Gallery Full</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-menu-items"><a href="javascript:void('0')">Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="{% url 'blog_list' %}">Blog List</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-menu-items"><a href="javascript:void('0')">pages</a>
-                                <ul class="sub-menu">
-                                    <li><a href="archive.html">Archive</a></li>
-                                    <li><a href="{% url 'about' %}">About Me</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-menu-items"><a href="{% url 'email' %}">contact</a>
-                                <ul class="sub-menu">
-                                    <li><a href="{% url 'email' %}">Contact me</a></li>
-                                </ul>
-                            </li>
+                            <li class="has-menu-items"><a href="{% url 'category' %}">categories</a></li>
+                            <li class="has-menu-items"><a href="{% url 'blog_list' %}">Codes</a></li>
+                            <li class="has-menu-items"><a href="{% url 'blog_list' %}">Blog</a></li>
+                            <li class="has-menu-items"><a href="{% url 'about' %}">About Me</a></li>
+                            <li class="has-menu-items"><a href="{% url 'email' %}">contact</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-4 col-sm-3 col-xs-8 pull-right text-right">
-                    <div class="socialHeader">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-pinterest"></i></a>
-                    </div>
+                  <div class="socialHeader">
+                      <a href="https://www.facebook.com/redoanah"><i class="fa fa-facebook"></i></a>
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="https://www.instagram.com/ahredoan/"><i class="fa fa-instagram"></i></a>
+                      <a href="https://www.pinterest.com/ahredoan/"><i class="fa fa-pinterest"></i></a>
+                  </div>
                 </div>
             </div>
         </div>
     </div>
 </header>
 <!--Header End-->
+
 
               <section class="mainContent">
                 <div class="container">

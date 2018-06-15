@@ -3,12 +3,15 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import EmailForm
 from django.conf import settings
+from blog.models import PostModel
 
 def emailview(request):
     print('working')
     form = EmailForm(request.POST or None)
+    post = PostModel.objects.all()
     context = {
     	'form':form,
+        'post': post,
     }
     if request.method == 'POST':
         form = EmailForm(request.POST)

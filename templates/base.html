@@ -4,7 +4,7 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <title>Dhaka HTML Responsive Blog Template</title>
+        <title>Ahsan Habib</title>
         <meta name="viewport" content="width=device-width">
 
         <!-- Include All CSS -->
@@ -23,12 +23,17 @@
         <link rel="icon"  type="image/png" href="{% static 'images/favicona.png' %}">
         <!-- Favicon Icon -->
 
-        <!--[if lt IE 9]>
-            <script src="js/html5shiv.js"></script>
-            <script src="js/respond.min.js"></script>
-        <![endif]-->
+
     </head>
     <body class="animat">
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=398601957305210&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
         <div id="page">
             <div class="leftMenu">
                 <div class="leftmenuHead">
@@ -41,38 +46,20 @@
                 <div class="leftmenuScroll">
                     <nav class="leftmainnav">
                         <ul>
-                            <li><a href="{% url 'home' %}">home pages</a></li>
-                            <li class="has-menu-items"><a href="#">categories</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog_category.html">Category</a></li>
-                                    <li><a href="archive.html">Archive</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-menu-items"><a href="#">post styles</a>
-                                <ul class="sub-menu">
-                                    <li><a href="post_sidebar.html">Post Layout</a></li>
-                                    <li><a href="post_fullwidth.html">Full Width</a></li>
-                                    <li><a href="post_quate_sidebary.html">Quote Layout</a></li>
-                                    <li><a href="post_audio_sidebar.html">Audio Layout</a></li>
-                                    <li><a href="post_video_sidebar.html">Video Layout</a></li>
-                                    <li><a href="gellarypost.html">Gallery Post</a></li>
-                                    <li><a href="gellarypost_fullwidth.html">Gallery Full</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-menu-items"><a href="#">Blog</a></li>
-                            <li class="has-menu-items"><a href="{% url 'email' %}">contact</a>
-                                <ul class="sub-menu">
-                                    <li><a href="{% url 'email' %}">Contact Me</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li class="has-menu-items"><a href="{% url 'category' %}">categories</a></li>
+                            <li class="has-menu-items"><a href="https://github.com/ahsanhabib98">codes</a></li>
+                            <li class="has-menu-items"><a href="{% url 'blog_list' %}">Blog</a></li>
+                            <li class="has-menu-items"><a href="{% url 'about' %}">About Me</a></li>
+                            <li class="has-menu-items"><a href="{% url 'email' %}">contact</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="socialleft">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/redoanah"><i class="fa fa-facebook"></i></a>
                     <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://plus.google.com/u/0/112059170301259561065"><i class="fa fa-google-plus"></i></a>
+                    <a href="https://www.linkedin.com/in/ahsan-habib-43421b125/"><i class="fa fa-linkedin"></i></a>
                 </div>
             </div>
               <!--Header Top Start -->
@@ -185,10 +172,10 @@
                             </div>
                             <p class="copyrightText">Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam et purus at lectus tempus <span>Copyright © 2016 Dhaka. All Right Reserved</span></p>
                             <div class="footSocial">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/redoanah"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://www.instagram.com/ahredoan/"><i class="fa fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/in/ahsan-habib-43421b125/"><i class="fa fa-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
@@ -202,7 +189,7 @@
         <script type="text/javascript" src="{% static 'js/owl.carousel.js' %}"></script>
         <script src="https://maps.googleapis.com/maps/api/js"></script>
         <script type="text/javascript" src="{% static 'js/gmaps.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/jquery.mCustomScrollbar.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.mCustomScrollbar.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/theme.js' %}"></script>
     </body>
 </html>

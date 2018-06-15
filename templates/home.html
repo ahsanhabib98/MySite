@@ -33,48 +33,20 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="has-menu-items"><a href="javascript:void('0')">categories</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog_category.html">Category</a></li>
-                                    <li><a href="archive.html">Archive</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-menu-items"><a href="javascript:void('0')">post styles</a>
-                                <ul class="sub-menu">
-                                    <li><a href="post_sidebar.html">Post Layout</a></li>
-                                    <li><a href="post_fullwidth.html">Full Width</a></li>
-                                    <li><a href="post_quate_sidebary.html">Quote Layout</a></li>
-                                    <li><a href="post_audio_sidebar.html">Audio Layout</a></li>
-                                    <li><a href="post_video_sidebar.html">Video Layout</a></li>
-                                    <li><a href="gellarypost.html">Gallery Post</a></li>
-                                    <li><a href="gellarypost_fullwidth.html">Gallery Full</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-menu-items"><a href="javascript:void('0')">Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="{% url 'blog_list' %}">Blog List</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-menu-items"><a href="javascript:void('0')">pages</a>
-                                <ul class="sub-menu">
-                                    <li><a href="archive.html">Archive</a></li>
-                                    <li><a href="{% url 'about' %}">About Me</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-menu-items"><a href="{% url 'email' %}">contact</a>
-                                <ul class="sub-menu">
-                                    <li><a href="{% url 'email' %}">Contact me</a></li>
-                                </ul>
-                            </li>
+                            <li class="has-menu-items"><a href="{% url 'category' %}">categories</a></li>
+                            <li class="has-menu-items"><a href="{% url 'blog_list' %}">Codes</a></li>
+                            <li class="has-menu-items"><a href="{% url 'blog_list' %}">Blog</a></li>
+                            <li class="has-menu-items"><a href="{% url 'about' %}">About Me</a></li>
+                            <li class="has-menu-items"><a href="{% url 'email' %}">contact</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-4 col-sm-3 col-xs-8 pull-right text-right">
                     <div class="socialHeader">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/redoanah"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                        <a href="https://www.instagram.com/ahredoan/"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.pinterest.com/ahredoan/"><i class="fa fa-pinterest"></i></a>
                     </div>
                 </div>
             </div>
@@ -95,31 +67,22 @@
                                             <div class="silderCont">
                                                 <h1>Pellentesqu Velit Porta Semper</h1>
                                                 <div class="metaCont">
-                                                    <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
-                                                    <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
-                                                    <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="singleSlide">
-                                            <img src="{% static 'images/slider/b.jpg' %}" alt="">
+                                            <img src="{% static 'images/slider/2.jpg' %}" alt="">
                                             <div class="silderCont">
                                                 <h1>Pellentesqu Velit Porta Semper</h1>
                                                 <div class="metaCont">
-                                                    <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
-                                                    <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
-                                                    <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="singleSlide">
-                                            <img src="{% static 'images/slider/s.jpg' %}" alt="">
+                                            <img src="{% static 'images/slider/a.jpg' %}" alt="">
                                             <div class="silderCont">
                                                 <h1>Pellentesqu Velit Porta Semper</h1>
                                                 <div class="metaCont">
-                                                    <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
-                                                    <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
-                                                    <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -201,95 +164,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12">
-                                    <div class="singleBlog">
-                                        <div class="blogImg">
-                                            <img src="{% static 'images/blog/fw1.jpg' %}" alt="">
-                                        </div>
-                                        <div class="blogDec">
-                                            <h2 class="blogtitle">
-                                                <a href="#">Doing business like this takes much more effort than doing your</a>
-                                            </h2>
-                                            <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. </p>
-                                            <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
-                                                <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
-                                                <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="blogHlafWidth">
-                                    <div class="clearfix"></div>
-                                    <div class="col-lg-6 col-sm-12">
-                                        <div class="singleBlog hlafWidth">
-                                            <div class="blogImg">
-                                                <img src="{% static 'images/blog/h1.jpg' %}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-sm-12">
-                                        <div class="blogDec hlafWidthdec">
-                                            <h2 class="blogtitle">
-                                                <a href="#">For instance, whenever I go back to the guest house during the morning</a>
-                                            </h2>
-                                            <p>His boss would certainly come round with the doctor from the medical insurance company, accuse his parents of having a lazy son, and accept the doctor's recommendation not to make any claim as the doctor believed .</p>
-                                            <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
-                                                <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
-                                                <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="blogHlafWidth">
-                                    <div class="clearfix"></div>
-                                    <div class="col-lg-6 col-sm-12">
-                                        <div class="singleBlog hlafWidth">
-                                            <div class="blogImg">
-                                                <img src="{% static 'images/blog/h2.jpg' %}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-sm-12">
-                                        <div class="blogDec hlafWidthdec">
-                                            <h2 class="blogtitle">
-                                                <a href="#">Doing business like this takes much more effort than doing your own </a>
-                                            </h2>
-                                            <p>Doing business like this takes much more effort than doing your own business at home, and on top of that there's the curse of travelling, worries about making train connections, bad and irregular food.</p>
-                                            <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
-                                                <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
-                                                <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="blogHlafWidth">
-                                    <div class="clearfix"></div>
-                                    <div class="col-lg-6 col-sm-12">
-                                        <div class="singleBlog hlafWidth">
-                                            <div class="blogImg">
-                                                <img src="{% static 'images/blog/h3.jpg' %}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-sm-12">
-                                        <div class="blogDec hlafWidthdec">
-                                            <h2 class="blogtitle">
-                                                <a href="#">One morning, when Gregor Samsa woke from troubled dreams</a>
-                                            </h2>
-                                            <p>But who knows, maybe that would be the best thing for me. If I didn't have my parents to think about I'd have given in my notice a long time ago, I'd have gone up to the boss and told him just what I think, tell him everything I would.</p>
-                                            <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
-                                                <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
-                                                <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-sm-5">
@@ -309,22 +183,14 @@
                                 <aside class="widget">
                                     <div class="followMe">
                                         <h2 class="widgetTitle">follow me</h2>
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="https://www.facebook.com/redoanah"><i class="fa fa-facebook"></i></a>
                                         <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                                        <a href="https://plus.google.com/u/0/112059170301259561065"><i class="fa fa-google-plus"></i></a>
+                                        <a href="https://www.linkedin.com/in/ahsan-habib-43421b125/"><i class="fa fa-linkedin"></i></a>
+                                        <a href="https://www.pinterest.com/ahredoan/"><i class="fa fa-pinterest"></i></a>
                                     </div>
                                 </aside>
-                                <aside class="widget">
-                                    <div class="banner">
-                                        <img src="{% static 'images/b1.jpg' %}" alt="">
-                                        <div class="bannerCont">
-                                            <h2>dhaka</h2>
-                                            <p>WORDPRESS THEME FOR BLOGGERS</p>
-                                        </div>
-                                    </div>
-                                </aside>
+
                                 <aside class="widget">
                                     <h3 class="widgetTitle">RECENT POSTS</h3>
                                     <div class="recentPost">
@@ -350,7 +216,7 @@
                                 </aside>
                                 <aside class="widget emailSub">
                                     <h3 class="widgetTitle">subcribe</h3>
-                                    <p>Etiam mollis leo ac diam facilisis, in pretium felis molestie. Quisque non nisi ut lectus</p>
+                                    <p>To get notify for latest post please subscribe MySite.</p>
                                     <form action="#" method="POST" class="subForm" id="">
                                         {% csrf_token %}
                                         {{form.as_p}}
@@ -363,46 +229,19 @@
                                       <ul>
                                         {% for category in category %}
                                           <li><a href="{% url 'categorywise_blog' category.id %}">{{category.name}}</a></li>
-                                          <!-- <li><a href="#">Business</a></li>
-                                          <li><a href="#">Celebrity</a></li>
-                                          <li><a href="#">Creativity</a></li>
-                                          <li><a href="#">Fashion</a></li>
-                                          <li><a href="#">General</a></li>
-                                          <li><a href="#">Magazine</a></li>
-                                          <li><a href="#">Travel</a></li> -->
                                         {% endfor %}
                                       </ul>
                                   </aside>
 
                                 <aside class="widget">
-                                    <div class="flickr">
-                                        <h2 class="widgetTitle">flickr photo</h2>
-                                        <a href="#"><img src="{% static 'images/recentpost/1.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/3.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/2.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/3.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/2.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/1.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/1.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/2.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/3.jpg' %}" alt=""></a>
-
-                                    </div>
-                                </aside>
-                                <aside class="widget">
                                     <h2 class="widgetTitle">Tag</h2>
                                     <div class="tagcloud">
-                                        <a href="#">blog</a>
-                                        <a href="#">personal</a>
-                                        <a href="#">wordpress</a>
-                                        <a href="#">travel</a>
-                                        <a href="#">fashion</a>
-                                        <a href="#">Html</a>
-                                        <a href="#">dhaka html</a>
-                                        <a href="#">envato</a>
-                                        <a href="#">bloging</a>
-                                        <a href="#">Html</a>
-                                        <a href="#">dhaka html</a>
+                                        <a href="{% url 'home' %}">Home</a>
+                                        <a href="{% url 'category' %}">Categories</a>
+                                        <a href="{% url 'blog_list' %}">Codes</a>
+                                        <a href="{% url 'blog_list' %}">Blog</a>
+                                        <a href="{% url 'about' %}">About</a>
+                                        <a href="{% url 'email' %}">Contact</a>
                                     </div>
                                 </aside>
                             </div>
