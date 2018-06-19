@@ -59,23 +59,11 @@
                        <div class="row">
                           <div class="col-lg-8">
                               <div class="row">
-                                {% for category in category %}
-                                  <div class="col-lg-6">
-                                      <div class="singleBlog">
-                                        <div class="blogDec">
-                                            <h2 class="blogtitle">
-                                                <a href="{% url 'categorywise_blog' category.id %}">{{category.name}}</a>
-                                            </h2>
-                                            <div class="blogMeta">
-                                            </div>
-                                        </div>
-                                          <div class="blogImg">
-                                              <img src="{{category.photo.url}}" alt="">
-                                              <p>{{category.brief}}</p>
-                                          </div>
-                                      </div>
-                                  </div>
-                                {% endfor %}
+                                <form class="" action="" method="POST">
+                                  {% csrf_token %}
+                                  {{forms.as_p}}
+                                  <button type="submit" name="">Submit</button>
+                                </form>
                               </div>
                           </div>
                            <div class="col-lg-4 col-sm-5">

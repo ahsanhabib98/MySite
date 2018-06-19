@@ -20,16 +20,16 @@
                             <li class="has-menu-items"><a href="#">Mega menu</a>
                                 <div class="row megaitem">
                                     <div class="mega-menu">
+                                      {% for post in post %}
                                         <div class="col-lg-3 col-sm-6">
-                                          {% for post in post %}
                                             <div class="megaImg">
                                                 <a href="#"><img src="{{post.photo.url}}" alt=""></a>
                                             </div>
                                             <h2 class="megaTitle">
                                                 <a href="{% url 'blog_detail' post.id %}">{{post.title}}</a>
                                             </h2>
-                                          {% endfor %}
                                         </div>
+                                      {% endfor %}
                                     </div>
                                 </div>
                             </li>
@@ -83,68 +83,27 @@
 
                       <div class="col-lg-4 col-sm-5">
                             <div class="sidebarBlog">
-                                <aside class="widget">
-                                    <h3 class="widgetTitle">ABOUT ME</h3>
-                                    {% for author in author %}
-                                      <div class="aboutMe">
-                                          <img src="{{author.photo.url}}" height="100" width="300" alt="">
-                                          <div class="aboutdec">
-                                              <h4>{{author.name}}</h4>
-                                              <p>{{author.detail}}</p>
-                                          </div>
-                                      </div>
-                                    {% endfor %}
-                                </aside>
-                                <aside class="widget">
-                                    <div class="followMe">
-                                        <h2 class="widgetTitle">follow me</h2>
-                                        <a href="https://www.facebook.com/redoanah"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="https://plus.google.com/u/0/112059170301259561065"><i class="fa fa-google-plus"></i></a>
-                                        <a href="https://www.linkedin.com/in/ahsan-habib-43421b125/"><i class="fa fa-linkedin"></i></a>
-                                        <a href="https://www.pinterest.com/ahredoan/"><i class="fa fa-pinterest"></i></a>
-                                    </div>
-                                </aside>
-                                <aside class="widget">
-                                    <div class="banner">
-                                        <img src="{% static 'images/b1.jpg' %}" alt="">
-                                        <div class="bannerCont">
-                                            <h2>dhaka</h2>
-                                            <p>WORDPRESS THEME FOR BLOGGERS</p>
-                                        </div>
-                                    </div>
-                                </aside>
+                              <aside class="widget emailSub">
+                                  <h3 class="widgetTitle">subcribe</h3>
+                                  <p>Etiam mollis leo ac diam facilisis, in pretium felis molestie. Quisque non nisi ut lectus</p>
+                                  <form action="#" method="POST" class="subForm" id="">
+                                      {% csrf_token %}
+                                      {{form.as_p}}
+                                      <button type="submit" id="subs_submit">Subscribe</button>
+                                  </form>
+                              </aside>
                                 <aside class="widget">
                                     <h3 class="widgetTitle">RECENT POSTS</h3>
                                     <div class="recentPost">
+                                      {% for post in r_post %}
                                         <div class="singleRecpost">
-                                            <img src="{% static 'images/recentpost/1.jpg' %}" alt="">
+                                            <img src="{{post.photo.url}}" alt="">
                                             <h2 class="recTitle">
-                                                <a href="#">Drops of rain could heard hitting the pane which made</a>
+                                                <a href="{% url 'blog_detail' post.id %}">{{post.title}}</a>
                                             </h2>
                                         </div>
-                                        <div class="singleRecpost">
-                                            <img src="{% static 'images/recentpost/2.jpg' %}" alt="">
-                                            <h2 class="recTitle">
-                                                <a href="#">And it's a funny sort of business to be sitting up there at your desk</a>
-                                            </h2>
-                                        </div>
-                                        <div class="singleRecpost">
-                                            <img src="{% static 'images/recentpost/3.jpg' %}" alt="">
-                                            <h2 class="recTitle">
-                                                <a href="#">It was half past six and the hands were quietly moving forwards</a>
-                                            </h2>
-                                        </div>
+                                      {% endfor %}
                                     </div>
-                                </aside>
-                                <aside class="widget emailSub">
-                                    <h3 class="widgetTitle">subcribe</h3>
-                                    <p>Etiam mollis leo ac diam facilisis, in pretium felis molestie. Quisque non nisi ut lectus</p>
-                                    <form action="#" method="POST" class="subForm" id="">
-                                        {% csrf_token %}
-                                        {{form.as_p}}
-                                        <button type="submit" id="subs_submit">Subscribe</button>
-                                    </form>
                                 </aside>
 
                                   <aside class="widget emailSub">
@@ -155,22 +114,6 @@
                                         {% endfor %}
                                       </ul>
                                   </aside>
-
-                                <aside class="widget">
-                                    <div class="flickr">
-                                        <h2 class="widgetTitle">flickr photo</h2>
-                                        <a href="#"><img src="{% static 'images/recentpost/1.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/3.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/2.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/3.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/2.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/1.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/1.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/2.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/3.jpg' %}" alt=""></a>
-
-                                    </div>
-                                </aside>
                                 <aside class="widget">
                                     <h2 class="widgetTitle">Tag</h2>
                                     <div class="tagcloud">

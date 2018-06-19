@@ -29,8 +29,7 @@ class PostModel(models.Model):
     author_name     = models.CharField(max_length=200)
     updated         = models.DateTimeField(auto_now=True)
     photo           = models.ImageField(upload_to='blog_image')
-    photo1           = models.ImageField(upload_to='blog_image', blank=True)
-    photo2           = models.ImageField(upload_to='blog_image', blank=True)
+    photo1          = models.ImageField(upload_to='blog_image', blank=True)
     category        = models.ForeignKey(PostCategory, on_delete=models.CASCADE)
 
     def __str__(self):

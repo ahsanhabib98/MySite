@@ -19,16 +19,16 @@
                             <li class="has-menu-items"><a href="#">Mega menu</a>
                                 <div class="row megaitem">
                                     <div class="mega-menu">
+                                      {% for post in post %}
                                         <div class="col-lg-3 col-sm-6">
-                                          {% for post in post %}
                                             <div class="megaImg">
                                                 <a href="#"><img src="{{post.photo.url}}" alt=""></a>
                                             </div>
                                             <h2 class="megaTitle">
                                                 <a href="{% url 'blog_detail' post.id %}">{{post.title}}</a>
                                             </h2>
-                                          {% endfor %}
                                         </div>
+                                      {% endfor %}
                                     </div>
                                 </div>
                             </li>
@@ -72,7 +72,7 @@
 
                                     </div>
                                     <div class="blogMeta gfullwidth">
-                                        <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
+                                        <a href="#"><i class="fa fa-user"></i>{{blog.author_name}}</a>
                                         <a href="#"> <i class="fa fa-clock-o"></i>{{blog.publish_date}}</a>
                                         <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                     </div>
@@ -113,24 +113,14 @@
                                 <aside class="widget">
                                     <h3 class="widgetTitle">RECENT POSTS</h3>
                                     <div class="recentPost">
+                                      {% for post in r_post %}
                                         <div class="singleRecpost">
-                                            <img src="{% static 'images/recentpost/1.jpg' %}" alt="">
+                                            <img src="{{post.photo.url}}" alt="">
                                             <h2 class="recTitle">
-                                                <a href="#">Drops of rain could heard hitting the pane which made</a>
+                                                <a href="{% url 'blog_detail' post.id %}">{{post.title}}</a>
                                             </h2>
                                         </div>
-                                        <div class="singleRecpost">
-                                            <img src="{% static 'images/recentpost/2.jpg' %}" alt="">
-                                            <h2 class="recTitle">
-                                                <a href="#">And it's a funny sort of business to be sitting up there at your desk</a>
-                                            </h2>
-                                        </div>
-                                        <div class="singleRecpost">
-                                            <img src="{% static 'images/recentpost/3.jpg' %}" alt="">
-                                            <h2 class="recTitle">
-                                                <a href="#">It was half past six and the hands were quietly moving forwards</a>
-                                            </h2>
-                                        </div>
+                                      {% endfor %}
                                     </div>
                                 </aside>
                                 <aside class="widget emailSub">

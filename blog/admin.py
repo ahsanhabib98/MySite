@@ -12,7 +12,6 @@ class PostModelAdmin(admin.ModelAdmin):
         'content',
         'photo',
         'photo1',
-        'photo2',
         'publish_date',
         'updated',
         'read_time',

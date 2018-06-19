@@ -19,16 +19,16 @@
                             <li class="has-menu-items"><a href="#">Mega menu</a>
                                 <div class="row megaitem">
                                     <div class="mega-menu">
+                                      {% for post in post %}
                                         <div class="col-lg-3 col-sm-6">
-                                          {% for post in post %}
                                             <div class="megaImg">
                                                 <a href="#"><img src="{{post.photo.url}}" alt=""></a>
                                             </div>
                                             <h2 class="megaTitle">
                                                 <a href="{% url 'blog_detail' post.id %}">{{post.title}}</a>
                                             </h2>
-                                          {% endfor %}
                                         </div>
+                                      {% endfor %}
                                     </div>
                                 </div>
                             </li>
@@ -59,8 +59,8 @@
                        <div class="row">
                            <div class="col-lg-8">
                                <div class="row">
+                                 {% for blog in all_blog %}
                                    <div class="col-lg-6">
-                                     {% for blog in all_blog %}
                                        <div class="singleBlog">
                                            <div class="blogImg">
                                                <img src="{{blog.photo.url}}" alt="">
@@ -70,14 +70,14 @@
                                                    <a href="{% url 'blog_detail' blog.id %}">{{blog.title}}</a>
                                                </h2>
                                                <div class="blogMeta">
-                                                   <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
+                                                   <a href="#"><i class="fa fa-user"></i>{{blog.author_name}}</a>
                                                    <a href="#"> <i class="fa fa-clock-o"></i>{{blog.publish_date}}</a>
                                                    <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                                </div>
                                            </div>
                                        </div>
-                                      {% endfor %}
                                    </div>
+                                  {% endfor %}
                                </div>
                            </div>
                            <div class="col-lg-4 col-sm-5">
@@ -104,36 +104,18 @@
                                         <a href="https://www.pinterest.com/ahredoan/"><i class="fa fa-pinterest"></i></a>
                                     </div>
                                 </aside>
-                                <aside class="widget">
-                                    <div class="banner">
-                                        <img src="{% static 'images/b1.jpg' %}" alt="">
-                                        <div class="bannerCont">
-                                            <h2>dhaka</h2>
-                                            <p>WORDPRESS THEME FOR BLOGGERS</p>
-                                        </div>
-                                    </div>
-                                </aside>
+
                                 <aside class="widget">
                                     <h3 class="widgetTitle">RECENT POSTS</h3>
                                     <div class="recentPost">
+                                      {% for post in r_post %}
                                         <div class="singleRecpost">
-                                            <img src="{% static 'images/recentpost/1.jpg' %}" alt="">
+                                            <img src="{{post.photo.url}}" alt="">
                                             <h2 class="recTitle">
-                                                <a href="#">Drops of rain could heard hitting the pane which made</a>
+                                                <a href="{% url 'blog_detail' post.id %}">{{post.title}}</a>
                                             </h2>
                                         </div>
-                                        <div class="singleRecpost">
-                                            <img src="{% static 'images/recentpost/2.jpg' %}" alt="">
-                                            <h2 class="recTitle">
-                                                <a href="#">And it's a funny sort of business to be sitting up there at your desk</a>
-                                            </h2>
-                                        </div>
-                                        <div class="singleRecpost">
-                                            <img src="{% static 'images/recentpost/3.jpg' %}" alt="">
-                                            <h2 class="recTitle">
-                                                <a href="#">It was half past six and the hands were quietly moving forwards</a>
-                                            </h2>
-                                        </div>
+                                      {% endfor %}
                                     </div>
                                 </aside>
                                 <aside class="widget emailSub">
@@ -151,32 +133,10 @@
                                       <ul>
                                         {% for category in category %}
                                           <li><a href="{% url 'categorywise_blog' category.id %}">{{category.name}}</a></li>
-                                          <!-- <li><a href="#">Business</a></li>
-                                          <li><a href="#">Celebrity</a></li>
-                                          <li><a href="#">Creativity</a></li>
-                                          <li><a href="#">Fashion</a></li>
-                                          <li><a href="#">General</a></li>
-                                          <li><a href="#">Magazine</a></li>
-                                          <li><a href="#">Travel</a></li> -->
                                         {% endfor %}
                                       </ul>
                                   </aside>
 
-                                <aside class="widget">
-                                    <div class="flickr">
-                                        <h2 class="widgetTitle">flickr photo</h2>
-                                        <a href="#"><img src="{% static 'images/recentpost/1.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/3.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/2.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/3.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/2.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/1.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/1.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/2.jpg' %}" alt=""></a>
-                                        <a href="#"><img src="{% static 'images/recentpost/3.jpg' %}" alt=""></a>
-
-                                    </div>
-                                </aside>
                                 <aside class="widget">
                                     <h2 class="widgetTitle">Tag</h2>
                                     <div class="tagcloud">
@@ -188,6 +148,25 @@
                                       <a href="{% url 'email' %}">Contact</a>
                                     </div>
                                 </aside>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </section>
+
+               <section class="paginations">
+                   <div class="container">
+                       <div class="row">
+                           <div class="col-lg-12">
+                               <div class="paginationIn">
+                                   <span class="current">1</span>
+                                   <a href="#">2</a>
+                                   <a href="#">3</a>
+                                   <a href="#">4</a>
+                                   <span class="dottedPagi">...</span>
+                                   <a href="#">12</a>
+                                   <a href="#" class="next"><i class="fa fa-long-arrow-right"></i></a>
+                                   <div class="clearfix"></div>
                                </div>
                            </div>
                        </div>

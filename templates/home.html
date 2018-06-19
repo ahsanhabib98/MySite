@@ -20,16 +20,16 @@
                             <li class="has-menu-items"><a href="#">Mega menu</a>
                                 <div class="row megaitem">
                                     <div class="mega-menu">
+                                      {% for post in post %}
                                         <div class="col-lg-3 col-sm-6">
-                                          {% for post in post %}
                                             <div class="megaImg">
                                                 <a href="#"><img src="{{post.photo.url}}" alt=""></a>
                                             </div>
                                             <h2 class="megaTitle">
                                                 <a href="{% url 'blog_detail' post.id %}">{{post.title}}</a>
                                             </h2>
-                                          {% endfor %}
                                         </div>
+                                      {% endfor %}
                                     </div>
                                 </div>
                             </li>
@@ -65,7 +65,7 @@
                                         <div class="singleSlide">
                                             <img src="{% static 'images/slider/1.jpg' %}" alt="">
                                             <div class="silderCont">
-                                                <h1>Pellentesqu Velit Porta Semper</h1>
+                                                <h1>Programmer</h1>
                                                 <div class="metaCont">
                                                 </div>
                                             </div>
@@ -73,7 +73,7 @@
                                         <div class="singleSlide">
                                             <img src="{% static 'images/slider/2.jpg' %}" alt="">
                                             <div class="silderCont">
-                                                <h1>Pellentesqu Velit Porta Semper</h1>
+                                                <h1>Developer</h1>
                                                 <div class="metaCont">
                                                 </div>
                                             </div>
@@ -81,7 +81,7 @@
                                         <div class="singleSlide">
                                             <img src="{% static 'images/slider/a.jpg' %}" alt="">
                                             <div class="silderCont">
-                                                <h1>Pellentesqu Velit Porta Semper</h1>
+                                                <h1>Coder</h1>
                                                 <div class="metaCont">
                                                 </div>
                                             </div>
@@ -90,8 +90,8 @@
                                 </div>
                             </div>
                             <div class="row">
+                              {% for post in all_blog %}
                                 <div class="col-lg-6 col-sm-12">
-                                  {% for post in post %}
                                     <div class="singleBlog">
                                         <div class="blogImg">
                                             <img src="{{post.photo.url}}" height="" alt="">
@@ -102,68 +102,14 @@
                                             </h2>
                                             <p>{{post.brief}}</p>
                                             <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
-                                                <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
-                                                <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                  {% endfor %}
-                                </div>
-                                <div class="col-lg-6 col-sm-12">
-                                    <div class="singleBlog">
-                                        <div class="blogImg">
-                                            <img src="{% static 'images/blog/2.jpg' %}" alt="">
-                                        </div>
-                                        <div class="blogDec">
-                                            <h2 class="blogtitle">
-                                                <a href="#">It was half past six and the hands were quietly moving forwards</a>
-                                            </h2>
-                                            <p>If I didn't have my parents to think about I'd have given in my notice a long time ago. He'd fall right off his desk! </p>
-                                            <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
-                                                <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
+                                                <a href="#"><i class="fa fa-user"></i>{{post.author_name}}</a>
+                                                <a href="#"> <i class="fa fa-clock-o"></i>{{post.publish_date}}</a>
                                                 <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-sm-12">
-                                    <div class="singleBlog">
-                                        <div class="blogImg">
-                                            <img src="{% static 'images/blog/3.jpg' %}" alt="">
-                                        </div>
-                                        <div class="blogDec">
-                                            <h2 class="blogtitle">
-                                                <a href="#">It was half past six and the hands were quietly moving forwards</a>
-                                            </h2>
-                                            <p>If I didn't have my parents to think about I'd have given in my notice a long time ago. He'd fall right off his desk! </p>
-                                            <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
-                                                <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
-                                                <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-sm-12">
-                                    <div class="singleBlog">
-                                        <div class="blogImg">
-                                            <img src="{% static 'images/blog/4.jpg' %}" alt="">
-                                        </div>
-                                        <div class="blogDec">
-                                            <h2 class="blogtitle">
-                                                <a href="#">Doing business like this takes much more effort than doing your own </a>
-                                            </h2>
-                                            <p>If I didn't have my parents to think about I'd have given in my notice a long time ago. He'd fall right off his desk! </p>
-                                            <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>TavillaThemes</a>
-                                                <a href="#"> <i class="fa fa-clock-o"></i>18 March 2016</a>
-                                                <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                              {% endfor %}
                             </div>
                         </div>
                         <div class="col-lg-4 col-sm-5">
@@ -194,24 +140,14 @@
                                 <aside class="widget">
                                     <h3 class="widgetTitle">RECENT POSTS</h3>
                                     <div class="recentPost">
+                                      {% for post in r_post %}
                                         <div class="singleRecpost">
-                                            <img src="{% static 'images/recentpost/1.jpg' %}" alt="">
+                                            <img src="{{post.photo.url}}" alt="">
                                             <h2 class="recTitle">
-                                                <a href="#">Drops of rain could heard hitting the pane which made</a>
+                                                <a href="{% url 'blog_detail' post.id %}">{{post.title}}</a>
                                             </h2>
                                         </div>
-                                        <div class="singleRecpost">
-                                            <img src="{% static 'images/recentpost/2.jpg' %}" alt="">
-                                            <h2 class="recTitle">
-                                                <a href="#">And it's a funny sort of business to be sitting up there at your desk</a>
-                                            </h2>
-                                        </div>
-                                        <div class="singleRecpost">
-                                            <img src="{% static 'images/recentpost/3.jpg' %}" alt="">
-                                            <h2 class="recTitle">
-                                                <a href="#">It was half past six and the hands were quietly moving forwards</a>
-                                            </h2>
-                                        </div>
+                                      {% endfor %}
                                     </div>
                                 </aside>
                                 <aside class="widget emailSub">

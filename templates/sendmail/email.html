@@ -22,16 +22,16 @@
                             <li class="has-menu-items"><a href="#">Mega menu</a>
                                 <div class="row megaitem">
                                     <div class="mega-menu">
+                                      {% for post in post %}
                                         <div class="col-lg-3 col-sm-6">
-                                          {% for post in post %}
                                             <div class="megaImg">
                                                 <a href="#"><img src="{{post.photo.url}}" alt=""></a>
                                             </div>
                                             <h2 class="megaTitle">
                                                 <a href="{% url 'blog_detail' post.id %}">{{post.title}}</a>
                                             </h2>
-                                          {% endfor %}
                                         </div>
+                                      {% endfor %}
                                     </div>
                                 </div>
                             </li>

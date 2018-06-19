@@ -8,7 +8,7 @@ from blog.models import PostModel
 def emailview(request):
     print('working')
     form = EmailForm(request.POST or None)
-    post = PostModel.objects.all()
+    post = PostModel.objects.all()[:4]
     context = {
     	'form':form,
         'post': post,

@@ -6,7 +6,9 @@ from blog.models import PostModel, PostCategory
 
 def home(request):
 	author = Author.objects.all()
-	post = PostModel.objects.all()
+	all_blog = PostModel.objects.all()
+	post = PostModel.objects.all()[:4]
+	r_post = PostModel.objects.all()[:3]
 	category = PostCategory.objects.all()
 
 	if request.method == 'POST':
@@ -17,7 +19,9 @@ def home(request):
 
 	context = {
 		'author': author,
+		'all_blog': all_blog,
 		'post': post,
+		'r_post': r_post,
 		'category': category,
 		'form': SubscribeForm(),
 	}
@@ -25,8 +29,8 @@ def home(request):
 	return render(request, template, context)
 
 def about(request):
-	author = Author.objects.all()
-	post = PostModel.objects.all()
+	post = PostModel.objects.all()[:4]
+	r_post = PostModel.objects.all()[:3]
 	category = PostCategory.objects.all()
 
 	if request.method == 'POST':
@@ -34,10 +38,10 @@ def about(request):
 		if form.is_valid():
 			obj = form.save()
 			return redirect('home')
-	
+
 	context = {
-		'author': author,
 		'post': post,
+		'r_post': r_post,
 		'category': category,
 		'form': SubscribeForm(),
 	}
