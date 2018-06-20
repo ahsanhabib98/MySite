@@ -6,9 +6,9 @@ from blog.models import PostModel, PostCategory
 
 def home(request):
 	author = Author.objects.all()
-	all_blog = PostModel.objects.all()
-	post = PostModel.objects.all()[:4]
-	r_post = PostModel.objects.all()[:3]
+	all_blog = PostModel.objects.filter(draft=True)
+	post = PostModel.objects.filter(draft=True)[:4]
+	r_post = PostModel.objects.filter(draft=True)[:3]
 	category = PostCategory.objects.all()
 
 	if request.method == 'POST':
@@ -29,8 +29,8 @@ def home(request):
 	return render(request, template, context)
 
 def about(request):
-	post = PostModel.objects.all()[:4]
-	r_post = PostModel.objects.all()[:3]
+	post = PostModel.objects.filter(draft=True)[:4]
+	r_post = PostModel.objects.filter(draft=True)[:3]
 	category = PostCategory.objects.all()
 
 	if request.method == 'POST':
