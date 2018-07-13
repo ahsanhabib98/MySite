@@ -60,6 +60,15 @@
                        <div class="row">
                           <div class="col-lg-8">
                               <div class="row">
+                                <p>If anyone post your written or speech in mysite plz you are to act according these policies.</p>
+                          
+                                <ul>
+                                  <li>1. Do not post spamming or repeatedly posting irrelevant contents.</li>
+                                  <li>2. Please write in either English or Bangla. Please don't type Banglish.</li>
+                                  <li>3. Before making a post, please search in mysite for similar posts from the past.</li>
+                                  <li>4. Please avoid unnecessary conents/gossips.</li>
+                                </ul>
+
                                 <form class="" action="" method="POST" enctype="multipart/form-data">
                                   {% csrf_token %}
                                   {{form.as_p}}
@@ -118,8 +127,9 @@
                                     <div class="tagcloud">
                                       <a href="{% url 'home' %}">Home</a>
                                       <a href="{% url 'category' %}">Categories</a>
-                                      <a href="{% url 'blog_list' %}">Codes</a>
+                                      <a href="https://github.com/ahsanhabib98">Codes</a>
                                       <a href="{% url 'blog_list' %}">Blog</a>
+                                      <a href="{% url 'blog_create' %}">Post</a>
                                       <a href="{% url 'about' %}">About</a>
                                       <a href="{% url 'email' %}">Contact</a>
                                     </div>

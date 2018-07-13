@@ -6,9 +6,8 @@ from django.conf import settings
 from blog.models import PostModel
 
 def emailview(request):
-    print('working')
     form = EmailForm(request.POST or None)
-    post = PostModel.objects.all()[:4]
+    post = PostModel.objects.filter(draft=True)
     context = {
     	'form':form,
         'post': post,

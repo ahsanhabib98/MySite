@@ -66,24 +66,27 @@
                                         <div class="singleSlide">
                                             <img src="{% static 'images/slider/1.jpg' %}" alt="">
                                             <div class="silderCont">
-                                                <h1>Programmer</h1>
+                                                <h1>A good beginning is half the battle .</h1>
                                                 <div class="metaCont">
+                                                  <p>A good beginning is half the battle .</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="singleSlide">
                                             <img src="{% static 'images/slider/2.jpg' %}" alt="">
                                             <div class="silderCont">
-                                                <h1>Developer</h1>
+                                                <h1>An idle brain is the devil’s workshop .</h1>
                                                 <div class="metaCont">
+                                                  <p>An idle brain is the devil’s workshop .</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="singleSlide">
                                             <img src="{% static 'images/slider/a.jpg' %}" alt="">
                                             <div class="silderCont">
-                                                <h1>Coder</h1>
+                                                <h1>A word to the wise is sufficient .</h1>
                                                 <div class="metaCont">
+                                                  <p>A word to the wise is sufficient .</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -91,26 +94,25 @@
                                 </div>
                             </div>
                             <div class="row">
-                              {% for post in all_blog %}
-                                <div class="col-lg-6 col-sm-12">
+                              {% for blog in all_blog %}
+                                <div class="col-lg-6">
                                     <div class="singleBlog">
                                         <div class="blogImg">
-                                            <img src="{{post.photo.url}}" height="" alt="">
+                                            <img src="{{blog.photo.url}}" alt="">
                                         </div>
                                         <div class="blogDec">
                                             <h2 class="blogtitle">
-                                                <a href="{% url 'blog_detail' post.id %}">{{post.title}}</a>
+                                                <a href="{% url 'blog_detail' blog.id %}">{{blog.title}}</a>
                                             </h2>
-                                            <p>{{post.brief}}</p>
                                             <div class="blogMeta">
-                                                <a href="#"><i class="fa fa-user"></i>{{post.author_name}}</a>
-                                                <a href="#"> <i class="fa fa-clock-o"></i>{{post.publish_date}}</a>
+                                                <a href="#"><i class="fa fa-user"></i>{{blog.author_name}}</a>
+                                                <a href="#"> <i class="fa fa-clock-o"></i>{{blog.publish_date}}</a>
                                                 <a href="#"><i class="fa fa-comments"></i>6 Comments</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                              {% endfor %}
+                             {% endfor %}
                             </div>
                         </div>
                         <div class="col-lg-4 col-sm-5">
@@ -175,8 +177,9 @@
                                     <div class="tagcloud">
                                         <a href="{% url 'home' %}">Home</a>
                                         <a href="{% url 'category' %}">Categories</a>
-                                        <a href="{% url 'blog_list' %}">Codes</a>
+                                        <a href="https://github.com/ahsanhabib98">Codes</a>
                                         <a href="{% url 'blog_list' %}">Blog</a>
+                                        <a href="{% url 'blog_create' %}">Post</a>
                                         <a href="{% url 'about' %}">About</a>
                                         <a href="{% url 'email' %}">Contact</a>
                                     </div>
