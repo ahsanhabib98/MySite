@@ -21,7 +21,6 @@ class PostModel(models.Model):
     draft           = models.BooleanField(default=False) #empty in the database
     title           = models.CharField(max_length = 300)
     slug            = models.SlugField(null=True, blank=True)
-    brief           = models.CharField(max_length=500)
     content         = models.TextField(null=True, blank=True)
     publish_date    = models.DateField(auto_now=False, auto_now_add=False, default=timezone.now)
     read_time       = models.IntegerField(default=0)
